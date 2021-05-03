@@ -1,0 +1,17 @@
+SELECT * FROM peliculasdb.actores WHERE edad>21
+SELECT * FROM peliculasdb.actores WHERE sexo= 'Masculino'
+SELECT * FROM peliculasdb.actores WHERE sexo= 'Femenino'
+SELECT COUNT(sexo) from actores WHERE sexo= 'Masculino'
+SELECT COUNT(sexo) from actores WHERE sexo= 'Femenino'
+SELECT nombrePelicula FROM peliculas INNER JOIN actores ON peliculas.idActores=3 and actores.IdActores=3;
+SELECT nombreActor FROM actores INNER JOIN peliculas ON peliculas.idPeliculas=6 AND actores.idPaisorigen=2;
+UPDATE actores SET nombreActor='Al Pacino' WHERE idActores=3;
+UPDATE peliculas SET genero='Mafia' WHERE idPeliculas=5;
+UPDATE actores SET idNacionalidad=0 WHERE Idactores=4;
+DELETE FROM actores WHERE nombreActor='Mel Gibson';
+DELETE FROM peliculas WHERE nombrePelicula='Apocalypse now';
+INSERT INTO peliculas (nombrePelicula,genero,añoEstreno,nombreDirector,IdPaisOrigen,IdActores) VALUES ('Falling Down','Accion','1993','Joel Schumacher',0,3);
+INSERT INTO actores (nombreActor,edad,sexo,IdPaisorigen) VALUES ('Leonardo Dicaprio',46,'Masculino',0);
+
+Ignacio no logro hacer que la reverse engineer me pase los datos que inserté en Heidi al archivo del diagrama del Workbench. 
+Y no estoy seguro de que la relación entre las tablas peliculas actores sea como lo estoy mandando(creo que es n:m) pero es de la unica forma que logro que las consultas select con inner join queden bien.
